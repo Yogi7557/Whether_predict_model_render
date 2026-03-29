@@ -1,0 +1,151 @@
+body { 
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  transition: all 0.6s ease;
+
+  /* Default background */
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
+              url("snowy.jpg") no-repeat center center/cover;
+}
+
+/* SUNNY */
+body.sunny {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+              url("Sunny.jpg") no-repeat center center/cover;
+}
+
+/* RAINY */
+body.rainy {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+              url("rainy.jpg") no-repeat center center/cover;
+}
+
+/* CLOUDY */
+body.cloudy {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.75)),
+              url("cloudy.jpg") no-repeat center center/cover;
+}
+
+/* SNOW (optional future) */
+body.snow {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+              url("snow.jpg") no-repeat center center/cover;
+}
+
+/* Center Layout */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 0;
+}
+
+/* Card */
+.card {
+    background: rgba(255, 255, 255, 0.97);
+    padding: 30px;
+    width: 520px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin-bottom: 5px;
+}
+
+.header p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Inputs */
+input, select {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Focus */
+input:focus, select:focus {
+    border-color: #2196F3;
+    box-shadow: 0 0 8px rgba(33,150,243,0.4);
+    outline: none;
+}
+
+/* Full width */
+.full-width {
+    grid-column: span 2;
+}
+
+/* Button */
+.btn {
+    grid-column: span 2;
+    padding: 14px;
+    background: linear-gradient(135deg, #2196F3, #0d47a1);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Result */
+.result {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: span 1;
+    }
+
+    .btn {
+        grid-column: span 1;
+    }
+}

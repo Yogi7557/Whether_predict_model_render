@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="{{ bg_class }}">
+
+<div class="main-container">
+
+    <div class="card">
+
+        <div class="header">
+            <h1>🌦 Weather Prediction</h1>
+            <p>Smart weather forecasting using Machine Learning</p>
+        </div>
+
+        <form action="/predict" method="post" class="form-grid">
+
+            <div class="input-group">
+                <label>Temperature (°C)</label>
+                <input type="number" step="any" name="Temperature" placeholder="e.g. 25" required>
+            </div>
+
+            <div class="input-group">
+                <label>Humidity (%)</label>
+                <input type="number" step="any" name="Humidity" placeholder="e.g. 60" required>
+            </div>
+
+            <div class="input-group">
+                <label>Wind Speed (km/h)</label>
+                <input type="number" step="any" name="Wind Speed" placeholder="e.g. 15" required>
+            </div>
+
+            <div class="input-group">
+                <label>Precipitation (%)</label>
+                <input type="number" step="any" name="Precipitation (%)" placeholder="e.g. 20" required>
+            </div>
+
+            <div class="input-group">
+                <label>Cloud Cover</label>
+                <select name="Cloud Cover" required>
+                    <option value="">Select</option>
+                    <option>clear</option>
+                    <option>partly cloudy</option>
+                    <option>overcast</option>
+                    <option>cloudy</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Pressure (hPa)</label>
+                <input type="number" step="any" name="Atmospheric Pressure" placeholder="e.g. 1012" required>
+            </div>
+
+            <div class="input-group">
+                <label>UV Index</label>
+                <input type="number" step="any" name="UV Index" placeholder="e.g. 5" required>
+            </div>
+
+            <div class="input-group">
+                <label>Season</label>
+                <select name="Season" required>
+                    <option value="">Select</option>
+                    <option>Winter</option>
+                    <option>Summer</option>
+                    <option>Autumn</option>
+                    <option>Spring</option>
+                </select>
+            </div>
+
+            <div class="input-group full-width">
+                <label>Visibility (km)</label>
+                <input type="number" step="any" name="Visibility (km)" placeholder="e.g. 10" required>
+            </div>
+
+            <div class="input-group full-width">
+                <label>Location</label>
+                <select name="Location" required>
+                    <option value="">Select</option>
+                    <option>inland</option>
+                    <option>coastal</option>
+                    <option>mountain</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">🔍 Predict Weather</button>
+
+        </form>
+
+        <div class="result">
+            <h2>{{ prediction_text }}</h2>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
